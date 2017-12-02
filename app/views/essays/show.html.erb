@@ -28,8 +28,8 @@
         <% if @essay.drafts.any?%>
           <% @i = 0 %>
           <% @essay.drafts.each do |draft| %>
-            <%= link_to "Draft #{@i}", essay_draft_path(@essay, draft) %>
-            <% i += 1 %>
+            <%= link_to "Draft", essay_draft_path(@essay, draft) %>
+            <% @i+=1 %>
           <%end%>
         <%end%>
       </div>
