@@ -1,15 +1,15 @@
 <h1>Welcome to the Essay Organizer</h1>
 <%if @essays.any?%>
   <ul class="collapsible " data-collapsible="accordion">
-    <% for @essays.each do |essay| %>
+    <%@essays.each do |essay| %>
       <li>
         <div class="collapsible-header"><i class="material-icons">book</i> <%= essay.title %></div>
         <div class="collapsible-body">
             <span>Due on: <%= essay.due_date %>
             <%= link_to "View Essay", essay_path(essay), :class => "btn waves-effect waves-light"%></span>
-          </div>
-        </li>
-      <%end%>
+        </div>
+      </li>
+    <%end%>
   </ul>
 <%end%>
 
