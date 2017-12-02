@@ -1,0 +1,11 @@
+<p><%= form_for ([@essay, @draft]) do |f| %></p>
+
+  <p><%= f.label :content %></p>
+  <p><%= f.text_area :content %></p>
+
+  <p><%= f.label :notes %></p>
+  <p><%= f.text_area :notes %></p>
+
+  <%= f.submit :class => "btn waves-effect blue lighten-2"%>
+
+<%end%>
