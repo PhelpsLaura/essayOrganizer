@@ -7,6 +7,25 @@
 <%end%>
 
 <% if @essay.sources.any?%>
+<div class="row">
+   <div class="col s12">
+     <ul class="tabs">
+       <% @essay.sources.each do |source| %>
+         <li class="tab col s3"><a href=source><%=source.title%></a></li>
+       <%end%>
+     </ul>
+   </div>
+
+   <div id=source class="col s12">
+     <% @essay.sources.each do |source| %>
+        <%= render "sources" %>
+     <%end%>
+   </div>
+ </div>
+
+<script>
+  $('ul.tabs').tabs();
+</script>
   <%= render @essay.sources %>
 <%end%>
 
