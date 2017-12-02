@@ -1,20 +1,21 @@
 <h1>Welcome to the Essay Organizer</h1>
 <ul class="collapsible " data-collapsible="accordion">
+  <%if @essays.any?%>
+    <% for @essays.each do |essay| %>
     <li>
-      <div class="collapsible-header"><i class="material-icons">First project name</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-header"><i class="material-icons">book</i> <%= essay.title %></div>
+      <div class="collapsible-body">
+        <span>Due on: <%= essay.due_date %></span>
+        <%= link_to essay_path(essay) do %>
+          <i class="material-icons right">play_arrow</i>
+        <%end%>
+      </div>
     </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">Second project name</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">Third project name</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
+    <%end%>
   </ul>
 
-  <a class="waves-effect waves-light btn-large">Create New Project +</a>
+
+  <a class="waves-effect waves-light btn-large">Create New Project <i class="material-icons"></i>add_box</a>
 
   <script>
   $(document).ready(function(){
