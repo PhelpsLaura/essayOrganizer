@@ -18,7 +18,7 @@
         <ul>
         <% if @essay.sources.any?%>
           <% @essay.sources.each do |source| %>
-            <li><%= link_to source.title, essay_source_path(@essay, source) %></li>
+            <li><%= link_to "#{source.title}", essay_source_path(@essay, source) %></li>
           <%end%>
         <%end%>
         <li><%= link_to "New Source!", new_essay_source_path(@essay) %></li>
