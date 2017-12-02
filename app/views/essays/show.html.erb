@@ -11,7 +11,7 @@
    <div class="col s12">
      <ul class="tabs">
        <% @essay.sources.each do |source| %>
-         <li class="tab col s3"><a href=source><%=source.title%></a></li>
+         <li class="tab col s3"><a href=source><i class="material-icons">book</i></a></li>
        <%end%>
      </ul>
    </div>
@@ -22,11 +22,6 @@
      <%end%>
    </div>
  </div>
-
-<script>
-  $('ul.tabs').tabs();
-</script>
-  <%= render @essay.sources %>
 <%end%>
 
 
@@ -74,6 +69,10 @@
       </ul>
     </div>
   <% end %>
+
+  <script>
+    $('ul.tabs').tabs();
+  </script>
 
   <script>
      $('.collapsible').collapsible();
