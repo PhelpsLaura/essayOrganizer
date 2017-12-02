@@ -5,9 +5,9 @@
     <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Draft<i class="material-icons right">arrow_drop_down</i></a></li>
     <ul id='dropdown1' class='dropdown-content'>
       <% if @essay.drafts.any? %>
-        <% i = 1 %>
+        <% @i = 1 %>
         <% @essay.drafts.each do |draft| %>
-          <li><%= link_to "Draft #{i}", essay_draft_path(@essay, @drafts) %></li>
+          <li><%= link_to "Draft #{@i}", essay_draft_path(@essay, @drafts) %></li>
         <%end%>
       <%end%>
       <%= link_to "New Draft!", new_essay_draft_path %>
