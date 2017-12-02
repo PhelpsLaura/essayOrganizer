@@ -18,7 +18,7 @@
 
    <div id=source class="col s12">
      <% @essay.sources.each do |source| %>
-        <%= render "sources" %>
+        <%= render @essay.sources %>
      <%end%>
    </div>
  </div>
