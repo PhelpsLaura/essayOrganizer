@@ -1,6 +1,7 @@
 
 <h1><%= @essay.title %></h1>
 <h9> <div class="date red-text"> Due Date: <%=@essay.due_date %></div></h9>
+
 <% if @essay.drafts.any?%>
   <%= render @essay.drafts %>
 <%end%>
@@ -14,23 +15,29 @@
     <li>
       <div class="collapsible-header">Bibliography</div>
       <div class="collapsible-body">
+        <ul>
         <% if @essay.sources.any?%>
           <% @essay.sources.each do |source| %>
-            <li><%= link_to source.title, essay_draft_path(@essay, source) %></li>
+            <li><%= link_to source.title, essay_source_path(@essay, source) %></li>
           <%end%>
         <%end%>
+        <li><%= link_to "New Source!", new_essay_source_path(@essay) %></li>
+        </ul>
       </div>
     </li>
     <li>
       <div class="collapsible-header">Write</div>
       <div class="collapsible-body">
+        <ul>
         <% if @essay.drafts.any?%>
           <% @i = 0 %>
           <% @essay.drafts.each do |draft| %>
-            <%= link_to "Draft", essay_draft_path(@essay, draft) %>
+            <li><%= link_to "Draft", essay_draft_path(@essay, draft) %></li>
             <% @i+=1 %>
           <%end%>
         <%end%>
+        <li><%= link_to "New Draft!", new_essay_draft_path(@essay) %></li>
+      </ul>
       </div>
     </li>
   </ul>
