@@ -10,7 +10,7 @@
   </head>
 
 <!-- TODO: Translate to work in Materialize -->
-<div class=row>
+<nav>
   <p class="navbar-text right">
     <% if user_signed_in? %>
       Logged in as <strong><%= current_user.email %></strong>.
@@ -21,7 +21,7 @@
       <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
     <% end %>
   </p>
-</div>
+</nav>
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
   <% end %>
