@@ -1,7 +1,6 @@
 <h1>Welcome to the Essay Organizer</h1>
-<ul class="collapsible " data-collapsible="accordion">
-<<<<<<< HEAD
-  <%if @essays.any?%>
+<%if @essays.any?%>
+  <ul class="collapsible " data-collapsible="accordion">
     <% for @essays.each do |essay| %>
       <li>
         <div class="collapsible-header"><i class="material-icons">book</i> <%= essay.title %></div>
@@ -13,39 +12,12 @@
           </div>
         </li>
       <%end%>
-    <%end%>
-=======
-    <li>
-      <div class="collapsible-header"><i class="material-icons">First project name</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">Second project name</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">Third project name</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">First project name</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">First project name</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">First project name</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
->>>>>>> f7ffb6db2c987821733b5dc9f407fbe9059c01a6
   </ul>
+<%end%>
 
+<%= link_to "Create New Project", new_essay_path, :class => "waves-effect waves-light btn-large" %>
 
-  <a class="waves-effect waves-light btn-large">Create New Project <i class="material-icons"></i>add_box</a>
-
-  <script>
+<script>
   $(document).ready(function(){
    $('.collapsible').collapsible();
  });
