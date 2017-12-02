@@ -11,4 +11,6 @@ header, main, footer {
       }
     }
 
-    
+    .ilike-blue-container {
+        @extend .blue, .lighten-4;
+      }
