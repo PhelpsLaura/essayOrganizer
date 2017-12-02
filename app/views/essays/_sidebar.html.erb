@@ -1,0 +1,31 @@
+<nav>
+  <ul>
+    <li><%= link_to "Sources", essay_sources_path(@essay) %></li>
+    <li><%= link_to "Outline", essay_sections_path(@essay) %></li>
+    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Draft<i class="material-icons right">arrow_drop_down</i></a></li>
+    <ul id='dropdown1' class='dropdown-content'>
+      <% if @essay.drafts.any? %>
+        <% i = 1 %>
+        <% @essay.drafts.each do |draft| %>
+          <li><%= link_to "Draft #{i}", essay_draft_path(@essay, @drafts) %></li>
+        <%end%>
+      <%end%>
+      <%= link_to "New Draft!", new_essay_draft_path %>
+    </ul>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+</nav>
+
+
+
+  <script>
+    // Show sideNav
+  $(".button-collapse").sideNav();
+
+  $('.button-collapse').sideNav('show');
+  // Hide sideNav
+  $('.button-collapse').sideNav('hide');
+  // Destroy sideNav
+  $('.button-collapse').sideNav('destroy');
+
+  </script>

@@ -10,8 +10,8 @@
   <%= render @essay.sources %>
 <%end%>
 
-<% if @essay.outline.any?%>
-<%= render @essay.outline %>
+<% if @essay.sections.any?%>
+<%= render @essay.sections %>
 <%end%>
 
 <ul class="collapsible" data-collapsible="accordion">
