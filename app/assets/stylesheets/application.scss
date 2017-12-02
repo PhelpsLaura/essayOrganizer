@@ -14,3 +14,16 @@
  *= require_self
  */
 @import 'materialize';
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Mada:400,700');
+
+body{
+ font-family: 'Mada' 'Mada Bold';
+}
+
+h1{
+ font-family: 'Fredericka the Great';
+}
+
+.container{
+ margin-bottom: 10px;
+}
