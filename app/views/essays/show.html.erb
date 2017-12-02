@@ -1,6 +1,6 @@
 <%= render "sidebar" %>
 <h1><%= @essay.title %></h1>
-<h4>< Due Date: <%=@essay.due_date %></h4>
+<h9>< Due Date: <%=@essay.due_date %></h9>
 <% if @essay.drafts.any?%>
   <%= render @essay.drafts %>
 <%end%>
