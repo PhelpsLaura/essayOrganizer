@@ -1,0 +1,18 @@
+<div class="col s12 m6">
+  <div class="card sticky-action">
+    <div class="card-content">
+      <h3 class="card-title activator">Notes on: <%= source.title %> <i class="material-icons right">more_vert</i> </h3>
+    </div>
+    <div class="card-action">
+      <%= link_to "edit", edit_essay_source_research_card_path(@essay, section, research_card), :class => "btn-flat waves-effect waves-teal lighten-3"%>
+      <%= link_to "destroy", essay_research_card_path(@essay, section, research_card), method: :delete,
+                             data: {confirm: "Are you sure you want to delete this essay research card?"},
+                             :class => "btn-flat waves-effect waves-teal lighten-3"%>
+    </div>
+    <div class="card-reveal">
+      <h3 class="card-title activator"> Notes on: <%= source.title %> <i class="material-icons right">close</i> </h3>
+      <%= markdown(research_card.body) %>
+    </div>
+
+  </div>
+</div>
