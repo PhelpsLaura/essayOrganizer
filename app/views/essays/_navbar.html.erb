@@ -7,7 +7,7 @@
       <% if @essay.drafts.any? %>
         <% @i = 1 %>
         <% @essay.drafts.each do |draft| %>
-          <li><%= link_to "Draft #{@i}", essay_draft_path(@essay, @drafts) %></li>
+          <li><%= link_to "Draft #{@i}", essay_draft_path(@essay, @draft) %></li>
         <%end%>
       <%end%>
       <%= link_to "New Draft!", new_essay_draft_path %>
