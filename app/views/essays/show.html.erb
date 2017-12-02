@@ -1,6 +1,6 @@
 <%= render "sidebar" %>
 <h1><%= @essay.title %></h1>
-<span class="new badge red">Due Date: <%=@essay.due_date %></span>
+<h4>< Due Date: <%=@essay.due_date %></h4>
 <% if @essay.drafts.any?%>
   <%= render @essay.drafts %>
 <%end%>
