@@ -8,6 +8,7 @@
         <% @i = 1 %>
         <% @essay.drafts.each do |draft| %>
           <li><%= link_to "Draft #{@i}", essay_draft_path(@essay, @draft) %></li>
+          <% @i += 1 %>
         <%end%>
       <%end%>
       <%= link_to "New Draft!", new_essay_draft_path %>

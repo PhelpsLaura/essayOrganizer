@@ -10,24 +10,44 @@
   <%= render @essay.sources %>
 <%end%>
 
-<% if @essay.sections.any?%>
-<%= render @essay.sections %>
-<%end%>
 
 <ul class="collapsible" data-collapsible="accordion">
     <li>
-      <div class="collapsible-header">Research</div>
-    </li>
-    <li>
-      <div class="collapsible-header">Outline</div>
-    </li>
-    <li>
       <div class="collapsible-header">Bibliography</div>
+      <div class="collapsible-body">
+        <% if @essay.sources.any?%>
+          <% @essay.sources.each do |source| %>
+            <li><%= link_to source.title, essay_draft_path(@essay, source) %></li>
+          <%end%>
+        <%end%>
+      </div>
     </li>
     <li>
       <div class="collapsible-header">Write</div>
+      <div class="collapsible-body">
+        <% if @essay.drafts.any?%>
+          <% @i = 0 %>
+          <% @essay.drafts.each do |draft| %>
+            <%= link_to "Draft #{@i}", essay_draft_path(@essay, draft) %>
+            <% i += 1 %>
+          <%end%>
+        <%end%>
+      </div>
     </li>
   </ul>
+
+  <% if @essay.sections.any? %>
+    <div class="section-outline">
+      <ul class="collapsible" data-collapsible="accordion">
+        <li>
+          <div class="collapsible-header">
+            <h4>Outline</h4>
+          </div>
+        </li>
+        <%= render @essay.sections %>
+      </ul>
+    </div>
+  <% end %>
 
   <script>
      $('.collapsible').collapsible();
