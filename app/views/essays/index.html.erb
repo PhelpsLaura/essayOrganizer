@@ -5,10 +5,8 @@
       <li>
         <div class="collapsible-header"><i class="material-icons">book</i> <%= essay.title %></div>
         <div class="collapsible-body">
-            <span>Due on: <%= essay.due_date %></span>
-            <%= link_to essay_path(essay) do %>
-              <i class="material-icons right">play_arrow</i>
-            <%end%>
+            <span>Due on: <%= essay.due_date %>
+            <%= link_to "View Essay", essay_path(essay), :class => "btn waves-effect waves-light"%></span>
           </div>
         </li>
       <%end%>
