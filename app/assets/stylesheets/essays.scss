@@ -1,14 +1,12 @@
 // Place all the styles related to the Essays controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#index-carousel{
-  height: 600px !important;
-}
-.index-card{
-  height: 90% !important;
-  width: 60% !important;
-}
+header, main, footer {
+      padding-left: 300px;
+    }
 
-textarea{
-  height: 500px !important;
-}
+    @media only screen and (max-width : 992px) {
+      header, main, footer {
+        padding-left: 0;
+      }
+    }

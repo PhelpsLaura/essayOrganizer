@@ -1,70 +1,17 @@
 <h1>Hello this is the index</h1>
-<div id="index-wrapper" class="wrapper">
-
-  <h1 class="center">Essay Planner!</h1>
-
-  <%if @essays.any?%>
-
-    <div id="index-carousel" class="carousel">
-
-      <%@essays.each do |essay|%>
-
-        <div class="card carousel-item index-card">
-
-          <div class="card-image waves-effect waves-light">
-            <%= image_tag("chalk.jpg", :class => "activator") %>
-          </div>
-
-          <div class="card-content">
-            <h3 class="card-title activator"> <%= essay.title %>
-              <i class="material-icons right">more_vert</i>
-            </h3>
-          </div>
-
-          <div class="card-reveal">
-            <h3 class="card-title activator"> <%= essay.title %>
-              <i class="material-icons right">close</i>
-            </h3>
-            <p class="text-purple lighten-3">Due: <%= essay.due_date %></p>
-            <p>Section will contain more content in future; options include: preiview of content,
-            summary of intent, outline, etc, etc.</p>
-            <span class="teal-text lighten-1">
-              <%= link_to "More", essay_path(essay),
-                  :class => "teal-text lighten-1" %>
-              ||
-              <%= link_to "Delete", essay_path(essay), method: :delete,
-                  data: {confirm: "Are you sure you want to delete this Essay?"},
-                  :class => "teal-text lighten-1" %>
-          </span>
-          </div>
-
-        </div>
-
-    <%end%>
-    </div>
-
-  <%end%>
-  <div class="clearfix"></div>
-</div>
-
-<script>
-    $('.carousel').carousel();
-</script>
-<!-- <ul id="slide-out" class="side-nav">
-      <li><a href="#!">Research</a></li>
-      <li><a href="#!">Outline</a></li>
-      <li><a href="#!">Write Drafts</a></li>
-      <li><a href="#!">Bibliography</a></li>
+<ul id="slide-out" class="side-nav">
+      <li><a href="#!">First Sidebar Link</a></li>
+      <li><a href="#!">Second Sidebar Link</a></li>
       <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
           <li>
             <a class="collapsible-header">Dropdown<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><a href="#!">Research</a></li>
-                <li><a href="#!">Outline</a></li>
-                <li><a href="#!">Write</a></li>
-                <li><a href="#!">Bibliography</a></li>
+                <li><a href="#!">First</a></li>
+                <li><a href="#!">Second</a></li>
+                <li><a href="#!">Third</a></li>
+                <li><a href="#!">Fourth</a></li>
               </ul>
             </div>
           </li>
@@ -76,12 +23,21 @@
       <li><a href="#!">Second Sidebar Link</a></li>
       <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
       <ul id='dropdown1' class='dropdown-content'>
-        <li><a href="#!">Research</a></li>
-        <li><a href="#!">Outline</a></li>
-        <li><a href="#!">Write</a></li>
-        <li><a href="#!">Bibliography</a></li>
+        <li><a href="#!">First</a></li>
+        <li><a href="#!">Second</a></li>
+        <li><a href="#!">Third</a></li>
+        <li><a href="#!">Fourth</a></li>
       </ul>
     </ul>
-
     <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-   -->
+
+
+
+    <script>
+    // Show sideNav
+  $('.button-collapse').sideNav('show');
+  // Hide sideNav
+  $('.button-collapse').sideNav('hide');
+  // Destroy sideNav
+  $('.button-collapse').sideNav('destroy');
+  </script>
