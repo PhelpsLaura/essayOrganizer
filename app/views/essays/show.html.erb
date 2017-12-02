@@ -1,4 +1,4 @@
-<%= render "sidebar" %> 
+<%= render "navbar" %>
 <h1><%= @essay.title %></h1>
 <h9> <div class="date red-text"> Due Date: <%=@essay.due_date %></div></h9>
 <% if @essay.drafts.any?%>
@@ -9,7 +9,11 @@
   <%= render @essay.sources %>
 <%end%>
 
-<!-- <ul class="collapsible" data-collapsible="accordion">
+<% if @essay.outline.any?%>
+<%= render @essay.outline %>
+<%end%>
+
+<ul class="collapsible" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">Research</div>
     </li>
@@ -22,7 +26,7 @@
     <li>
       <div class="collapsible-header">Write</div>
     </li>
-  </ul> -->
+  </ul>
 
   <script>
      $('.collapsible').collapsible();
