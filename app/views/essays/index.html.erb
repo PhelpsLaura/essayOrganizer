@@ -1,10 +1,19 @@
 <h1>Welcome to the Essay Organizer</h1>
 <%if @essays.any?%>
   <ul class="collapsible " data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span><i class="material-icons">book</i> oink</span>
+      </div>
+
+      <div class="collapsible-body">
+          <span>Due on:moo </span>
+      </div>
+    </li>
     <%@essays.each do |essay| %>
       <li>
         <div class="collapsible-header">
-          <span><i class="material-icons">book</i> <%= essay.title %></span>
+          <span><i class="material-icons">book</i><%= essay.title %></span>
         </div>
 
         <div class="collapsible-body">
@@ -20,4 +29,4 @@
 
 <script>
    $('.collapsible').collapsible();
- </script>
+</script>
