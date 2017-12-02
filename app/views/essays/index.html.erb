@@ -2,15 +2,16 @@
 <ul class="collapsible " data-collapsible="accordion">
   <%if @essays.any?%>
     <% for @essays.each do |essay| %>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">book</i> <%= essay.title %></div>
-      <div class="collapsible-body">
-        <span>Due on: <%= essay.due_date %></span>
-        <%= link_to essay_path(essay) do %>
-          <i class="material-icons right">play_arrow</i>
-        <%end%>
-      </div>
-    </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">book</i> <%= essay.title %></div>
+        <div class="collapsible-body">
+            <span>Due on: <%= essay.due_date %></span>
+            <%= link_to essay_path(essay) do %>
+              <i class="material-icons right">play_arrow</i>
+            <%end%>
+          </div>
+        </li>
+      <%end%>
     <%end%>
   </ul>
 
