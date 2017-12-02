@@ -10,7 +10,11 @@
 
         <div class="collapsible-body">
             <span>Due on: <%= essay.due_date %>
-            <%= link_to "View Essay", essay_path(essay), :class => "btn btn-flat waves-effect waves-purple right"%></span>
+            <%= link_to "View Essay", essay_path(essay), :class => "btn btn-flat waves-effect waves-purple right"%>
+            <%= link_to "Delete", essay_path(@essay), method: :delete,
+                                   data: {confirm: "Are you sure you want to delete this essay"},
+                                   :class => "btn-flat waves-effect waves-red lighten-3"%>
+          </span>
         </div>
       </li>
     <%end%>
