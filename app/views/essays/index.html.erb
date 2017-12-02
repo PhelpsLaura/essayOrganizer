@@ -1,52 +1,23 @@
 <h1>Welcome to the Essay Organizer</h1>
-<ul class="collapsible " data-collapsible="accordion">
-<<<<<<< HEAD
-  <%if @essays.any?%>
-    <% for @essays.each do |essay| %>
+<%if @essays.any?%>
+  <ul class="collapsible " data-collapsible="accordion">
+    <%@essays.each do |essay| %>
       <li>
-        <div class="collapsible-header"><i class="material-icons">book</i> <%= essay.title %></div>
+        <div class="collapsible-header">
+          <span><i class="material-icons">book</i> <%= essay.title %></span>
+        </div>
+
         <div class="collapsible-body">
-            <span>Due on: <%= essay.due_date %></span>
-            <%= link_to essay_path(essay) do %>
-              <i class="material-icons right">play_arrow</i>
-            <%end%>
-          </div>
-        </li>
-      <%end%>
+            <span>Due on: <%= essay.due_date %>
+            <%= link_to "View Essay", essay_path(essay), :class => "btn waves-effect waves-light"%></span>
+        </div>
+      </li>
     <%end%>
-=======
-    <li>
-      <div class="collapsible-header"><i class="material-icons">First project name</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">Second project name</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">Third project name</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">First project name</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">First project name</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">First project name</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
->>>>>>> f7ffb6db2c987821733b5dc9f407fbe9059c01a6
   </ul>
+<%end%>
 
+<%= link_to "Create New Project", new_essay_path, :class => "waves-effect waves-light btn-large" %>
 
-  <a class="waves-effect waves-light btn-large">Create New Project <i class="material-icons"></i>add_box</a>
-
-  <script>
-  $(document).ready(function(){
+<script>
    $('.collapsible').collapsible();
- });
  </script>
