@@ -11,15 +11,16 @@
    <div class="col s12">
      <ul class="tabs">
        <% @essay.sources.each do |source| %>
-
-         <li class="tab col s3"><a href="<%=source.title%>"><i class="material-icons">book</i></a></li>
+         <%@title = source.title%>
+         <li class="tab col s3"><a href="<%=@title%>"><i class="material-icons">book</i></a></li>
        <%end%>
      </ul>
    </div>
 
 
      <% @essay.sources.each do |source| %>
-       <div id="<%=source.title%>" class="col s12">
+        <%@title = source.title%>
+       <div id="<%@title%>" class="col s12">
           <%= render @essay.sources %>
         </div>
      <%end%>
@@ -35,8 +36,7 @@
         <ul>
         <% if @essay.sources.any?%>
           <% @essay.sources.each do |source| %>
-            <% @title = source.title %>
-            <li><%= link_to "#{@title}", essay_source_path(@essay, source) %></li>
+            <li><%= link_to "Source", essay_source_path(@essay, source) %></li>
           <%end%>
         <%end%>
         <li><%= link_to "New Source!", new_essay_source_path(@essay) %></li>
@@ -48,10 +48,10 @@
       <div class="collapsible-body">
         <ul>
         <% if @essay.drafts.any?%>
-          <% @i = 0 %>
           <% @essay.drafts.each do |draft| %>
-            <li><%= link_to "Draft", essay_draft_path(@essay, draft) %></li>
-            <% @i+=1 %>
+            <li><%= link_to "Draft", essay_draft_path(@essay, draft) %>
+            <%= link_to "Edit", edit_essay_draft_path(@essay, draft), :class => "btn-floating btn-flat waves-effect waves-teal lighten-1" %>
+            <%= link_to essay_draft_path(@essay, draft), method: :delete, data: {confirm: "Are you sure you want to delete this draft?"}, :class => "btn-floating btn-flat waves-effect waves-red lighten-1" %></li>
           <%end%>
         <%end%>
         <li><%= link_to "New Draft!", new_essay_draft_path(@essay) %></li>
