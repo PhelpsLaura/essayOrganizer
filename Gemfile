@@ -8,6 +8,9 @@ end
 #Use jquery
 gem 'jquery-rails'
 
+#Use devise for users
+gem 'devise'
+
 #Use Materialize Sass
 gem 'materialize-sass'
 
