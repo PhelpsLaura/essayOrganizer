@@ -1,2 +1,10 @@
 <%= render "sidebar" %>
 <h1><%= @essay.title %></h1>
+
+<% if @essay.drafts.any?%>
+  <%= render @essay.drafts %>
+<%end%>
+
+<% if @essay.sources.any?%>
+  <%= render @essay.sources %>
+<%end%>
