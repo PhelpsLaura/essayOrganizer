@@ -1,0 +1,10 @@
+<%= form_for @essay do |f| %>
+  <p><%= f.label :title %></p>
+  <p><%= f.text_field :title %></p>
+
+  <p><%= f.label :due_date %></p>
+  <p><%= f.date_field :due_date %></p>
+
+  <p><%= f.submit :class => "btn waves-effect purple lighten-3"%></p>
+
+<%end%>
