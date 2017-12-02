@@ -11,12 +11,13 @@
    <div class="col s12">
      <ul class="tabs">
        <% @essay.sources.each do |source| %>
-         <li class="tab col s3"><a href=source><i class="material-icons">book</i></a></li>
+
+         <li class="tab col s3"><a href="<%source%>"><i class="material-icons">book</i></a></li>
        <%end%>
      </ul>
    </div>
 
-   <div id=source class="col s12">
+   <div id="<%source%>" class="col s12">
      <% @essay.sources.each do |source| %>
         <%= render @essay.sources %>
      <%end%>
