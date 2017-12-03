@@ -3,3 +3,5 @@
 <% if source.research_cards.any? %>
   <%= render source.research_cards %>
 <%end%>
+<%= link_to "New Research Card!", new_essay_source_research_card_path(@essay, source),
+                                  :class => "btn btn-flat waves-effect waves-purple lighten-3"%>
