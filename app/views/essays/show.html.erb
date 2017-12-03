@@ -7,12 +7,9 @@
 <%end%>
 
 <% if @essay.sources.any?%>
-<div class="row">
-   <div id="essay-box" class="col s12">
-    <%= render @essay.sources %>
-  </div>
 
- </div>
+  <%= render @essay.sources %>
+
 <%end%>
 
 

@@ -1,3 +1,4 @@
+<div id="essay-box" class="col s12">
 <%= source.title %>
 <%= source.content %>
 <% if source.research_cards.any? %>
@@ -5,3 +6,4 @@
 <%end%>
 <%= link_to "New Research Card!", new_essay_source_research_card_path(@essay, source),
                                   :class => "btn btn-flat waves-effect waves-purple lighten-3"%>
+</div>
