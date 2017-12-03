@@ -1,8 +1,8 @@
 <div class="row">
-    <%= @source.title %>
+    <%= source.title %>
 </div>
-  <% if @source.research_cards.any? %>
-    <%= render @source.research_cards %>
+  <% if source.research_cards.any? %>
+    <%= render source.research_cards %>
   <%end%>
 <div class="row">
   <%= link_to "New Research Card!", new_essay_source_research_card_path(@essay, source),
