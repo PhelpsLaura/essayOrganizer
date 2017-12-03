@@ -21,8 +21,8 @@
         <% if @essay.sources.any?%>
           <% @essay.sources.each do |source| %>
             <li><%= link_to "Source", essay_source_path(@essay, source) %>
-              <%= link_to "Edit", edit_essay_source_path(@essay, source), :class => "btn-floating btn-flat waves-effect waves-teal lighten-1" %>
-              <%= link_to "Delete", essay_source_path(@essay, source), method: :delete, data: {confirm: "Are you sure you want to delete this draft?"}, :class => "btn-floating btn-flat waves-effect waves-red lighten-1" %></li>
+              <%= link_to "Edit", edit_essay_source_path(@essay, source), :class => "btn-flat waves-effect waves-teal lighten-1" %>
+              <%= link_to "Delete", essay_source_path(@essay, source), method: :delete, data: {confirm: "Are you sure you want to delete this draft?"}, :class => "btn-flat waves-effect waves-red lighten-1" %></li>
           <%end%>
         <%end%>
         <li><%= link_to "New Source!", new_essay_source_path(@essay) %></li>
@@ -36,8 +36,8 @@
         <% if @essay.drafts.any?%>
           <% @essay.drafts.each do |draft| %>
             <li><%= link_to "Draft", essay_draft_path(@essay, draft) %>
-            <%= link_to "Edit", edit_essay_draft_path(@essay, draft), :class => "btn-floating btn-flat waves-effect waves-teal lighten-1" %>
-            <%= link_to "Delete", essay_draft_path(@essay, draft), method: :delete, data: {confirm: "Are you sure you want to delete this draft?"}, :class => "btn-floating btn-flat waves-effect waves-red lighten-1" %></li>
+            <%= link_to "Edit", edit_essay_draft_path(@essay, draft), :class => "btn-flat waves-effect waves-teal lighten-1" %>
+            <%= link_to "Delete", essay_draft_path(@essay, draft), method: :delete, data: {confirm: "Are you sure you want to delete this draft?"}, :class => "btn-flat waves-effect waves-red lighten-1" %></li>
           <%end%>
         <%end%>
         <li><%= link_to "New Draft!", new_essay_draft_path(@essay) %></li>
