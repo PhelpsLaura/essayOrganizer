@@ -8,22 +8,9 @@
 
 <% if @essay.sources.any?%>
 <div class="row">
-   <div class="col s12">
-     <ul class="tabs">
-       <% @essay.sources.each do |source| %>
-         <%@title = source.title%>
-         <li class="tab col s3"><a href="1"><i class="material-icons">book</i></a></li>
-       <%end%>
-     </ul>
-   </div>
-
-
-     <% @essay.sources.each do |source| %>
-        <%@title = source.title%>
-       <div id="1" class="col s12">
-          <%= render @essay.sources %>
-        </div>
-     <%end%>
+   <div id="essay-box" class="col s12">
+    <%= render @essay.sources %>
+  </div>
 
  </div>
 <%end%>
